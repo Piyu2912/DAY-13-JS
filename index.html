@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DAY 13 JS</title>
+    <style>
+        .event_loop{
+            height: 500px;
+        }
+        .callback{
+            height: 500px;
+        }
+    </style>
+</head>
+<body>
+    <h2>SetTimeout</h2>
+
+    <p>setTimeout is a asynchronous function which gets executed once the timer expires.It gets executed only when the callstack becomes empty.</p>
+    <pre>
+        setTimeout(()=>{
+            alert("It will be printed after 4seconds")
+        },4000)
+    </pre>
+
+    <h2>Event Loop</h2>
+
+    <p>The event loop is a constantly running process that monitors both the callback queue 
+        and the call stack. If the call stack is not empty, the event loop waits until it is 
+        empty and places the next function from the callback queue to the call stack.
+    </p>
+
+    <img class="event_loop" src="https://i.stack.imgur.com/E4wh6.gif" alt="">
+
+    <h2>Closure</h2>
+
+    <p>Any function bounded by the lexical environment is called closure.Here it first checks for the reference of the variable in its own scope,if it is not found it tries to find out in the outer scope and if still it is not found it tries to find out in the global scope and finally if it is not found it returns undefined.</p>
+
+    <pre>
+        var x=13;
+        function check(){
+            console.log(x);
+        }
+        check();   //2
+    </pre>
+
+    <h2>Callback Queue</h2>
+
+    <p>
+        Callback queue is a data structure which gets ordinary callback functions coming from asynchronous functions such as setTimeout after the times expires.Callback function has a lesser priority than the microtask queue.
+    </p>
+
+    <img class="callback" src="https://miro.medium.com/max/1400/1*5EFiAA3mNQsVPTXt-AN7HQ.png" alt="">
+
+</body>
+</html>
